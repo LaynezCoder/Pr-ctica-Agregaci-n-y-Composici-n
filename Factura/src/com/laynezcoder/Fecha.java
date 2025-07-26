@@ -16,6 +16,8 @@ public class Fecha {
         setMes(pmes);
         setAnio(panio);
     }
+    
+    public Fecha ( ) {};
 
     public void setDia(int pdia) {
         dia = pdia;

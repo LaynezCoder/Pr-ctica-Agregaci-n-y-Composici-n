@@ -19,6 +19,10 @@ public class Linea {
         setDescripcion(pdescripcion);
         setPrecio(pprecio);
     }
+    
+    public Linea() {
+        
+    }
 
     public void setCantidad(float pcantidad) {
         cantidad = pcantidad;

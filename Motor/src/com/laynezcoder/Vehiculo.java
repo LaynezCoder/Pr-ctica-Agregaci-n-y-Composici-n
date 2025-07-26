@@ -14,6 +14,8 @@ public class Vehiculo {
         setMarca(pMarca);  
         setModelo(pModelo);  
     }  
+    
+    public Vehiculo ()  {}
 
     public void setMarca(String pMarca) { 
         marca = pMarca; 

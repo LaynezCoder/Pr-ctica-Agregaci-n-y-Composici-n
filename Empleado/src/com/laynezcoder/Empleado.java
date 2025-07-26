@@ -13,6 +13,10 @@ public class Empleado {
         setNombre(nombre);
         setCedula(cedula);
     }
+    
+    public Empleado() {
+        
+    }
 
     public void setNombre(String pNombre) { 
         nombre = pNombre; 

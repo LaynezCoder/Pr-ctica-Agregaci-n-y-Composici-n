@@ -14,6 +14,8 @@ public class Computadora {
         setSerie(pserie);
         setMarca(pmarca);
     }
+    
+    public Computadora() {};
 
     public void setSerie(String pSerie) {
         serie = pSerie;

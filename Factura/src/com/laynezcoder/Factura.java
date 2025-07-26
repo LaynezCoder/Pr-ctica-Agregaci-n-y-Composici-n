@@ -8,6 +8,7 @@ package com.laynezcoder;
 import java.util.Vector;
 
 public class Factura {
+
     private String numero;
     private String cliente;
     private Fecha fecha;
@@ -21,6 +22,10 @@ public class Factura {
         detalle = new Vector();
     }
 
+    public Factura() {
+        detalle = new Vector();
+    };
+
     public void setNumero(String pnumero) {
         numero = pnumero;
     }
@@ -33,7 +38,7 @@ public class Factura {
     private float calcularSubtotal() {
         Linea lineaDetalle;
         float subtotal = 0;
-        for(int i = 0; i < detalle.size(); i++) {
+        for (int i = 0; i < detalle.size(); i++) {
             lineaDetalle = (Linea) detalle.get(i);
             subtotal += lineaDetalle.calcularCosto();
         }
@@ -51,8 +56,8 @@ public class Factura {
     }
 
     /* Agrega una línea de detalle a la factura */
-    public void agregarLinea(int pcantidad, String pcodigo, 
-                            String pdescripcion, float pprecio) {
+    public void agregarLinea(int pcantidad, String pcodigo,
+            String pdescripcion, float pprecio) {
         detalle.add(new Linea(pcantidad, pcodigo, pdescripcion, pprecio));
     }
 
@@ -65,13 +70,13 @@ public class Factura {
         msg += "\t" + fecha.toString() + "\n";
         msg += "====================\n";
         msg += "Cant\tCódigo\tDescripción\tPrecio\tCosto\n";
-        
+
         Linea linea;
-        for(int i = 0; i < detalle.size(); i++) {
+        for (int i = 0; i < detalle.size(); i++) {
             linea = (Linea) detalle.get(i);
             msg += linea.toString() + "\n";
         }
-        
+
         msg += "\t\t====================\n";
         msg += "\t\tSubtotal: " + this.calcularSubtotal() + "\n";
         msg += "\t\tImpuesto: " + this.calcularImpuesto() + "\n";
@@ -79,4 +84,19 @@ public class Factura {
         msg += "===============\n";
         return msg;
     }
+
+    public Fecha getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Fecha fecha) {
+        this.fecha = fecha;
+    }
+    
+    public void setLinea(Linea linea) {
+        detalle.add(linea);
+    }
+
+    
+
 }
